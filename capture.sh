@@ -23,3 +23,6 @@
 # VIM
 [[ ! -f $HOME/.vimrc ]] || cp $HOME/.vimrc ./
 [[ ! -d $HOME/.vim/colors ]]   || cp -r $HOME/.vim/colors ./.vim/
+
+# DMENU
+[[ ! -d $HOME/Downloads/Pkgs/dmenu-5.2 ]] || cp -r $HOME/Downloads/Pkgs/dmenu-5.2 ./
