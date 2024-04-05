@@ -4,6 +4,11 @@ exec tail -n +3 $0
 # menu entries you want to add after this comment.  Be careful not to change
 # the 'exec tail' line above.
 
+menuentry "Arch with systemd initrd" --class linux --class arch {
+	echo "Booting Arch Linux with systemd init"
+
+}
+
 menuentry "Restart" --class restart {
 	echo "Rebooting..."
 	reboot

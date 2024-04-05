@@ -91,8 +91,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# GCC Compiler
+export CC=gcc-11
+export CXX=g++-11
+
 # History file
-HISTFILE=~/.histfile
+HISTFILE=~/.cache/.zshhistfile
 HISTSIZE=2000
 SAVEHIST=2000
 
@@ -148,7 +152,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto -n'
 alias ip='ip -color=auto'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -h'
+alias g++='g++ -Wall -g -std=c++11'
 
 # Different command
 alias rm='trash-put'
@@ -162,6 +167,7 @@ alias cl='clear'
 alias _='doas'
 alias mkd='mkdir -pv'
 alias rd='rmdir -v'
+alias pacupd='pacupg'
 
 # but longer idk
 alias startubuntu='xhost +local: & sudo ~/scripts/tschroot.sh ~/myubuntu'
@@ -172,15 +178,19 @@ alias untar='tar -xvf'
 alias untarbz2='untar -j'
 alias untargz='untar -z'
 alias sha='shasum -a 256'
+#alias blackhawk='ssh -Y ds0196@blackhawk.ece.uah.edu'
+alias blackhawk='sshpass -f $HOME/blackhawkpass ssh -Y ds0196@blackhawk.ece.uah.edu'
 
 # Sudo
 alias svim='sudo vim'
 alias scp='sudo cp'
 alias srm='sudo rm'
 alias smv='sudo mv'
-alias smkd='sudo mkd -pv'
+alias smkd='sudo mkdir -pv'
 
 # Shorter command but without additional input
+alias update='sudo pacman -Syu && yay -a'
+alias updatep10k='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'
 alias fwsetup='systemctl reboot --firmware-setup'
 alias df-noloop='df -h | grep -v ^/dev/loop'
 alias lsblk-noloop='lsblk | grep -v ^loop'
@@ -195,6 +205,7 @@ alias dc='cd'
 alias lc='cl'
 
 
+# Enforce powerline10k configuration depending on environment
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 if	[ "$TERM" = "linux" ]
 then

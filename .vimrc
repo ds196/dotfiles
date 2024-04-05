@@ -1,6 +1,16 @@
 " David's .vimrc
 " Started 9/17/23
 
+" Change cursor
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+" Change cursor to line on leave
+if has("autocmd")
+	autocmd VimLeave * silent let &t_SI = "\<Esc>[4 q"
+endif
+
 " PREFERENCES -----------------------------------------------------
 
 " Disable compatibility with vi which can cause unexpected issues.
