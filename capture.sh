@@ -24,6 +24,10 @@
 # i3-wpd WALLPAPERS
 [[ ! -d $HOME/Downloads/Pkgs/i3-wpd/unsplash ]] || cp -r $HOME/Downloads/Pkgs/i3-wpd/unsplash ./
 
+# OREO-SPARK-BLUE CURSORS
+[[ ! -d $HOME/.icons ]] || cp -r $HOME/.icons/oreo_spark_blue_cursors ./.icons/
+
+
 
 
 # XINITRC
