@@ -92,8 +92,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # GCC Compiler
-export CC=gcc-11
-export CXX=g++-11
+export CC=gcc
+export CXX=g++
 
 # History file
 HISTFILE=~/.cache/.zshhistfile
