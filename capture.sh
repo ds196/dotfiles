@@ -22,7 +22,12 @@
 
 # ZSH
 [[ ! -f $HOME/.zshrc ]] || cp $HOME/.zshrc ./
-[[ ! -d $HOME/.oh-my-zsh ]] || cp -r $HOME/.oh-my-zsh ./
+
+# P10K
+[[ ! -f $HOME/.p10k.ascii.zsh ]] || cp $HOME/.p10k.ascii.zsh ./
+[[ ! -f $HOME/.p10k.uni.zsh ]] || cp $HOME/.p10k.uni.zsh ./
+[[ ! -f $HOME/.p10k.vscode.zsh ]] || cp $HOME/.p10k.vscode.zsh ./
+
 
 # BASH
 [[ ! -f $HOME/.bashrc ]] || cp $HOME/.bashrc ./
