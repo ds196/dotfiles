@@ -17,6 +17,12 @@
 # i3
 [[ ! -f $HOME/.config/i3/config ]] || cp $HOME/.config/i3/config ./.config/i3/
 
+# KONSOLE
+[[ ! -f $HOME/.local/share/konsole/Profile\ 1.profile ]] || cp $HOME/.local/share/konsole/Profile\ 1.profile ./.local/share/konsole/
+[[ ! -f $HOME/.local/share/konsole/Sweet.colorscheme ]] || cp $HOME/.local/share/konsole/Sweet.colorscheme ./.local/share/konsole/
+
+
+
 # XINITRC
 [[ ! -f $HOME/.xinitrc ]] || cp $HOME/.xinitrc ./
 
