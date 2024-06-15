@@ -56,11 +56,8 @@ bindcode $mod+70 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec /home/david/.local/share/dmenu_run_history
-bindsym $mod+x exec /usr/bin/rofi -show drun
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+x exec /usr/bin/firefox
+bindsym $mod+z exec /usr/bin/code
 
 # change focus
 bindsym $mod+j focus left
@@ -149,6 +146,19 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# move focued container and switch to workspace
+bindsym $mod+Ctrl+Shift+1 move container to workspace number $ws1, workspace number $ws1
+bindsym $mod+Ctrl+Shift+2 move container to workspace number $ws2, workspace number $ws2
+bindsym $mod+Ctrl+Shift+3 move container to workspace number $ws3, workspace number $ws3
+bindsym $mod+Ctrl+Shift+4 move container to workspace number $ws4, workspace number $ws4
+bindsym $mod+Ctrl+Shift+5 move container to workspace number $ws5, workspace number $ws5
+bindsym $mod+Ctrl+Shift+6 move container to workspace number $ws6, workspace number $ws6
+bindsym $mod+Ctrl+Shift+7 move container to workspace number $ws7, workspace number $ws7
+bindsym $mod+Ctrl+Shift+8 move container to workspace number $ws8, workspace number $ws8
+bindsym $mod+Ctrl+Shift+9 move container to workspace number $ws9, workspace number $ws9
+bindsym $mod+Ctrl+Shift+0 move container to workspace number $ws10, workspace number $ws10
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -224,14 +234,14 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 1200px
 no_focus [class="plasmashell" window_type="notification"]
+for_window [title="Desktop @ QRect.*"] kill; floating enable; border none
 # Personal edits
 for_window [title="kscreen_osd_service"] floating enable; border none
-for_window [title="Desktop @ QRect.*"] kill; floating enable; border none
 for_window [class="QjackCtl"] floating enable; border none
 for_window [title="Graph - QjackCtl"] floating enable; border none
-for_window [title="Unlock Database - KeePassXC"] focus;
-for_window [class="KeePassXC" title="*\.kdbx*"] floating enable, move to scratchpad;
-for_window [class="KeePassXC" window_type="dialog"] floating enable, scratchpad show;
+for_window [class="KeePassXC" title=".*\.kdbx \[Locked\] - KeePassXC$"] floating enable, move to scratchpad, resize set 875 892 px, move position 200 px 200 px;
+for_window [class="KeePassXC" window_type="dialog"] move position center;
+for_window [title="zoom"] floating enable;
 
 focus_follows_mouse no
 mouse_warping none
@@ -257,7 +267,7 @@ bindsym $mod+Shift+n scratchpad show
 #exec --no-startup-id feh --bg-scale /home/david/Pictures/Wallpapers/Apollo.png
 exec --no-startup-id /home/david/Downloads/Pkgs/i3-wpd/i3wpd.py "--bg-fill" /home/david/Downloads/Pkgs/i3-wpd/unsplash .jpg
 # --no-fading-openclose prevents the screen from being unlocked for a few seconds after waking from sleep
-exec_always --no-startup-id picom --no-fading-openclose --backend glx --config /home/david/.config/picom.conf --blur-method dual_kawase
+exec_always --no-startup-id picom -bc --no-fading-openclose --config /home/david/.config/picom.conf
 
 exec_always alttab -w 1 -d 1 -pk Q -t 128x150 -i 127x48 -s 2 -bg black -fg "#a643cd" -frame "#f4d4ff" -font xft:segoeui-11
 

@@ -32,3 +32,7 @@
 
 # DMENU
 [[ ! -d $HOME/Downloads/Pkgs/dmenu-5.2 ]] || cp -r $HOME/Downloads/Pkgs/dmenu-5.2 ./
+
+# PACKAGE LISTS
+pacman -Qqe > ./packages_x86_64
+pacman -Qqm > ./aur_packages

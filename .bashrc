@@ -48,6 +48,4 @@ export PS2
 export PS3
 export PS4
 
-export PATH=/home/david/.local/bin:$PATH
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+# env vars found in ~/.bash_profile

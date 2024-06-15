@@ -2,13 +2,13 @@
 " Started 9/17/23
 
 " Change cursor
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
 
 " Change cursor to line on leave
 if has("autocmd")
-	autocmd VimLeave * silent let &t_SI = "\<Esc>[4 q"
+	autocmd VimLeave * silent !echo -ne "\e[6 q"
 endif
 
 " PREFERENCES -----------------------------------------------------
@@ -55,14 +55,21 @@ set hlsearch
 " PLUGINS ---------------------------------------------------------
 
 call plug#begin('~/.vim/plugged')
+" :PlugInstall
 
+
+" Bottom bar
 Plug 'vim-airline/vim-airline'
 
 "Plug 'rakr/vim-one'
 
+" Fancy text colors
 Plug 'chriskempson/tomorrow-theme'
 
 Plug 'vim-airline/vim-airline-themes'
+
+" Undo visualizer
+Plug 'simnalamburt/vim-mundo'
 
 call plug#end()
 
@@ -109,6 +116,17 @@ if version >= 703
     set undofile
     set undoreload=10000
 endif
+
+" Highlight line num of cursor
+"hi clear CursorLine
+"augroup CLClear
+"	autocmd! ColorScheme * hi clear CursorLine
+"augroup END
+
+hi CursorLineNR cterm=bold
+augroup CLNRSet
+	autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END
 
 " }}}
 

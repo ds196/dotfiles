@@ -178,8 +178,12 @@ alias untar='tar -xvf'
 alias untarbz2='untar -j'
 alias untargz='untar -z'
 alias sha='shasum -a 256'
+alias cleancache='sudo $HOME/scripts/cleanvar.sh'
 #alias blackhawk='ssh -Y ds0196@blackhawk.ece.uah.edu'
 alias blackhawk='sshpass -f $HOME/blackhawkpass ssh -Y ds0196@blackhawk.ece.uah.edu'
+aurclone () {
+	git clone "https://aur.archlinux.org/${$1}.git"
+}
 
 # Sudo
 alias svim='sudo vim'
@@ -203,6 +207,7 @@ alias rmorphans='sudo pacman -Rns $(pacman -Qqdt)'
 # When I can't type
 alias dc='cd'
 alias lc='cl'
+alias sl='ls'
 
 
 # Enforce powerline10k configuration depending on environment
