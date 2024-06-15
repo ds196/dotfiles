@@ -21,6 +21,9 @@
 [[ ! -f $HOME/.local/share/konsole/Profile\ 1.profile ]] || cp $HOME/.local/share/konsole/Profile\ 1.profile ./.local/share/konsole/
 [[ ! -f $HOME/.local/share/konsole/Sweet.colorscheme ]] || cp $HOME/.local/share/konsole/Sweet.colorscheme ./.local/share/konsole/
 
+# i3-wpd WALLPAPERS
+[[ ! -d $HOME/Downloads/Pkgs/i3-wpd/unsplash ]] || cp -r $HOME/Downloads/Pkgs/i3-wpd/unsplash ./
+
 
 
 # XINITRC
