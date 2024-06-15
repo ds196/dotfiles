@@ -8,8 +8,7 @@
 [[ -f /etc/systemd/timesyncd.conf ]] || cp /etc/systemd/timesyncd.conf ./elsewhere/
 
 # POLYBAR
-[[ ! -f $HOME/.config/polybar/config.ini ]] || cp $HOME/.config/polybar/config.ini ./.config/polybar/
-[[ ! -f $HOME/.config/polybar/launch.sh ]] || cp $HOME/.config/polybar/launch.sh ./.config/polybar/
+[[ ! -d $HOME/.config/polybar ]] || cp -r $HOME/.config/polybar ./.config/
 
 # PICOM
 [[ ! -f $HOME/.config/picom.conf ]] || cp $HOME/.config/picom.conf ./.config/
