@@ -22,6 +22,7 @@
 
 # ZSH
 [[ ! -f $HOME/.zshrc ]] || cp $HOME/.zshrc ./
+[[ ! -d $HOME/.oh-my-zsh ]] || cp -r $HOME/.oh-my-zsh ./
 
 # BASH
 [[ ! -f $HOME/.bashrc ]] || cp $HOME/.bashrc ./
